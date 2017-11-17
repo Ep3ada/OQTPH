@@ -188,7 +188,7 @@ namespace OQTPH.Models
 
                         command.ExecuteNonQuery();
                         // Tanto o nome quanto o login não interessam para enviar para o cliente
-                        Usuario usuario = new Usuario(id, "", "", "", token);
+                        Usuario usuario = new Usuario(id, token);
                         return usuario.EnviarParaCliente();
                     }
                 }

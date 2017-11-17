@@ -5,59 +5,31 @@ using System.Web;
 
 namespace OQTPH.Utils
 {
-    public static class Categoria
+    public class Categoria
     {
-
-        public enum _categorias {
-            Selecione,
-            Show,
-
+        private static string[] _categorias =
+        {
+             "Ciência/Tecnologia",
+            "Show",
+            "Infantil",
+            "Festa",
+            "Teatro",
+            "Concerto",
+            "Stand-Up",
+            "Moda/Beleza",
+            "Artes",
+            "Business",
+            "Dança",
+            "Outra"
         };
-        public static Dictionary<int, string> GetDictionaryFromEnum<T>()
+
+        public static string[] Categorias
         {
-
-            string[] names = Enum.GetNames(typeof(T));
-
-            Array keysTemp = Enum.GetValues(typeof(T));
-            var keys = keysTemp.Cast<int>();
-
-            var dictionary = keys.Zip(names, (k, v) => new
+            get
             {
-                Key = k,
-                Value = v
-            }).ToDictionary(x => x.Key, x => x.Value);
-
-            return dictionary;
-            //return null;
-        }
-
-        //public static class Enumeration
-        //{
-            public static IDictionary<int, string> GetAll<TEnum>() where TEnum : struct
-            {
-                var enumerationType = typeof(TEnum);
-
-                if (!enumerationType.IsEnum)
-                    throw new ArgumentException("Enumeration type is expected.");
-
-                var dictionary = new Dictionary<int, string>();
-
-                foreach (int value in Enum.GetValues(enumerationType))
-                {
-                    var name = Enum.GetName(enumerationType, value);
-                    dictionary.Add(value, name);
-                }
-
-                return dictionary;
+                return _categorias;
             }
-        //}
-
-
-        public static bool VerificarValor(string valor, string texto)
-        {
-            
-
-            return false;
         }
+        
     }
 }

@@ -138,7 +138,7 @@
                                     <asp:ListItem Text="Artes" Value="Artes" />
                                     <asp:ListItem Text="Business" Value="Business" />
                                     <asp:ListItem Text="Dança" Value="Dança" />
-                                    <asp:ListItem Text="Outras" Value="Outras" />
+                                    <asp:ListItem Text="Outra" Value="Outra" />
                                 </asp:DropDownList>
                             </div>
                         </div>
