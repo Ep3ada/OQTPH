@@ -100,6 +100,7 @@
     <Compile Include="Class19.cs" />
     <Compile Include="Class2.cs" />
     <Compile Include="Class20.cs" />
+    <Compile Include="CarregarEndereco.cs" />
     <Compile Include="Class3.cs" />
     <Compile Include="Class4.cs" />
     <Compile Include="Class5.cs" />
@@ -146,7 +147,7 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\CarregarEvento.cs" />
+    <Compile Include="CarregarEvento.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\IApagar.cs" />
@@ -170,6 +171,24 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\CriarEvento.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Dados.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Default.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Evento.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Perfil.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Login.aspx.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

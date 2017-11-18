@@ -1,12 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data.SqlClient;
+using System.Data;
 using System.Web;
-
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using OQTPH.Utils;
+using OQTPH.Models;
+using System.Text;
+using System.Net.Mail;
+using System.Net.Mail;
+using System.Web.Configuration;
 namespace OQTPH
 {
     public class Email
     {
+       public void Enviar()
+        {
+           
+        }
+
         //        try
         //            {
         //                using (System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587))
@@ -41,5 +54,6 @@ namespace OQTPH
         //            {
         //                // Exceções devem ser tratadas aqui!
         //            }
+
     }
 }

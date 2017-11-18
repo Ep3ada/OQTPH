@@ -74,6 +74,8 @@ namespace OQTPH
             Evento evento;
             Endereco endereco;
 
+            // aqui chama metodo pra pegar o endereco
+
 
             using (SqlConnection conn = Sql.OpenConnection())
             {
