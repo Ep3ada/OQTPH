@@ -10,7 +10,7 @@
 namespace OQTPH {
     
     
-    public partial class Evento {
+    public partial class MostrarEvento {
         
         /// <summary>
         /// form1 control.

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using OQTPH.Models;
+using OQTPH.Utils;
 
 namespace OQTPH
 {
@@ -104,5 +106,12 @@ namespace OQTPH
 //            {
 //                lblMsg.Text = "Erro de conexão inesperado!";
 //            }
+        public EventoBase SalvarEventoCompleto()
+        {
+
+        }
+
+
+
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Evento.aspx.cs" Inherits="OQTPH.Evento" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MostrarEvento.aspx.cs" Inherits="OQTPH.MostrarEvento" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <!DOCTYPE html>
 
@@ -41,7 +41,7 @@
                                 <a href="Dados.aspx">Registrar</a>
                             </asp:PlaceHolder>
                             <asp:PlaceHolder ID="PHout" runat="server" Visible="False">
-                                <a href="CriaEvento.aspx">Criar Evento</a>&emsp;&emsp;
+                                <a href="CriarEvento.aspx">Criar Evento</a>&emsp;&emsp;
                                 <a href="Perfil.aspx">Perfil</a>&emsp;&emsp;
                                
                                 <asp:LinkButton ID="aOUT" OnClick="aOUT_Click" runat="server" meta:resourcekey="aOUTResource1">Sair</asp:LinkButton>

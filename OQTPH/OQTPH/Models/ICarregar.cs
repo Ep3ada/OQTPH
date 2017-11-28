@@ -8,6 +8,6 @@ namespace OQTPH.Models
 {
     public interface ICarregar
     {
-        bool Carregar();
+        EventoBase Carregar(int id);
     }
 }

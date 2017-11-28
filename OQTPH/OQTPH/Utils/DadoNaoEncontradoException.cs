@@ -5,19 +5,19 @@ using System.Web;
 
 namespace OQTPH.Utils
 {
-    public class ValorInvalidoException : Exception
+    public class DadoNaoEncontradoException : Exception
     {
-        public ValorInvalidoException()
+        public DadoNaoEncontradoException()
             : base()
         {
         }
 
-        public ValorInvalidoException(string message)
+        public DadoNaoEncontradoException(string message)
             : base(message)
         {
         }
 
-        public ValorInvalidoException(string message, Exception inner)
+        public DadoNaoEncontradoException(string message, Exception inner)
         : base(message, inner)
         {
         }

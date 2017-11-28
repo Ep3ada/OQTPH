@@ -80,14 +80,16 @@
     <Content Include="CriarEvento.aspx" />
     <Content Include="Dados.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="Evento.aspx" />
+    <Content Include="MostrarEvento.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="EventoCompleto.cs" />
+    <Compile Include="ServicosEndereco.cs" />
+    <Compile Include="CarregarEventoCompleto.cs" />
     <Compile Include="Class10.cs" />
     <Compile Include="Class11.cs" />
     <Compile Include="Class12.cs" />
@@ -130,12 +132,12 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Email.cs" />
-    <Compile Include="Evento.aspx.cs">
-      <DependentUpon>Evento.aspx</DependentUpon>
+    <Compile Include="MostrarEvento.aspx.cs">
+      <DependentUpon>MostrarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Evento.aspx.designer.cs">
-      <DependentUpon>Evento.aspx</DependentUpon>
+    <Compile Include="MostrarEvento.aspx.designer.cs">
+      <DependentUpon>MostrarEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -149,11 +151,12 @@
     </Compile>
     <Compile Include="CarregarEvento.cs" />
     <Compile Include="Models\Endereco.cs" />
-    <Compile Include="Models\Evento.cs" />
+    <Compile Include="Models\EventoBase.cs" />
     <Compile Include="Models\IApagar.cs" />
     <Compile Include="Models\ICarregar.cs" />
     <Compile Include="Models\ISalvar.cs" />
     <Compile Include="Models\Perfil.cs" />
+    <Compile Include="Utils\DadoNaoEncontradoException.cs" />
     <Compile Include="Utils\PasswordHash.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Perfil.aspx.cs">

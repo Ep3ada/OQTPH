@@ -13,16 +13,6 @@ namespace OQTPH.Models
         private string bairro;
         private string cidade;
         private string estado;
-        // private SalvarEndereco _salvar;
-        // private arregarEndereco _carregar;
-        // private ApagarEndereco _apagar;
-
-        //public Endereco(SalvarEndereco salvar, CarregarEndereco carregar, ApagarEndereco apagar)
-        //{
-        //    _salvar = salvar;
-        //    _carregar = carregar;
-        //    _apagar = apagar;
-        //}
 
         public int Id
         {
@@ -102,9 +92,9 @@ namespace OQTPH.Models
 
         }
 
-        public Endereco Carregar()
+        public static Endereco Carregar(int id)
         {
-            return null;
+            return CarregarEndereco.Carregar(id);
         }
     }
 }

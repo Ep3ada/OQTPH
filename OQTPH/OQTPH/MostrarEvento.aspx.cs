@@ -8,7 +8,7 @@ using OQTPH.Models;
 
 namespace OQTPH
 {
-    public partial class Evento : System.Web.UI.Page
+    public partial class MostrarEvento : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

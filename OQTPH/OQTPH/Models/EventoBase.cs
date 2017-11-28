@@ -6,26 +6,24 @@ using OQTPH.Utils;
 
 namespace OQTPH.Models
 {
-    public class Evento
+    public abstract class EventoBase
     {
         private int id;
         private string nome;
         private string descricao;
         private int nroIngressos;
         private int idCriador;
+        private DateTime data;
+        private string telefone;
+        private double valor;
+        private int categoria;
         private string nomeCriador;
         private DateTime dataCriacao;
         private Endereco endereco;
         private DateTime dataCompra;
-        private ICarregar carregarStrategy;
-        private ISalvar salvarStrategy;
-        private IApagar apagarStrategy;
-
-        public Evento(ICarregar carregar, ISalvar salvar)
-        {
-            carregarStrategy = carregar;
-            salvarStrategy = salvar;
-        }
+        public ICarregar carregarStrategy;
+        public ISalvar salvarStrategy;
+        public IApagar apagarStartegy;
 
         //public Evento(
         //    int id,
@@ -48,6 +46,12 @@ namespace OQTPH.Models
         //    this.endereco = endereco;
         //    this.dataCompra = dataCompra;
         //}
+
+        public EventoBase(ISalvar salvar, ICarregar carregar)
+        {
+            salvarStrategy = salvar;
+            carregarStrategy = carregar;
+        }
 
         public int Id
         {
@@ -72,6 +76,7 @@ namespace OQTPH.Models
                 nome = value;
             }
         }
+
         public string Descricao
         {
             get
@@ -83,6 +88,7 @@ namespace OQTPH.Models
                 descricao = value;
             }
         }
+
         public int NroIngressos
         {
             get
@@ -106,6 +112,7 @@ namespace OQTPH.Models
                 idCriador = value;
             }
         }
+
         public string NomeCriador
         {
             get
@@ -117,6 +124,7 @@ namespace OQTPH.Models
                 nomeCriador = value;
             }
         }
+
         public DateTime DataCriacao
         {
             get
@@ -128,6 +136,7 @@ namespace OQTPH.Models
                 dataCriacao = value;
             }
         }
+
         public Endereco Endereco
         {
             get
@@ -139,6 +148,7 @@ namespace OQTPH.Models
                 endereco = value;
             }
         }
+
         public DateTime DataCompra
         {
             get
@@ -151,45 +161,72 @@ namespace OQTPH.Models
             }
         }
 
-        public ICarregar CarregarStrategy
+        public DateTime Data
         {
+            get
+            {
+                return data;
+            }
             set
             {
-                carregarStrategy = value;
+                data = value;
             }
         }
 
-        public ISalvar SalvarStrategy
+        public string Telefone
         {
+            get
+            {
+                return telefone;
+            }
             set
             {
-                salvarStrategy = value;
+                telefone = value;
             }
         }
 
-        public IApagar APagarStrategy
+        public double Valor
         {
+            get
+            {
+                return valor;
+            }
             set
             {
-                apagarStrategy = value;
+                valor = value;
             }
         }
 
-        public void Salvar()
+        public int Categoria
         {
-            salvarStrategy.Salvar();
+            get
+            {
+                return categoria;
+            }
+            set
+            {
+                categoria = value;
+            }
         }
 
-        public void Carregar()
+        public void SetCarregarStrategy(ICarregar strategy)
         {
-            // cria uma instacia vazia, usa esse metodo e atribui o retorno pra esse obj
-            carregarStrategy.Carregar();
+            carregarStrategy = strategy;
         }
 
-        public void Apagar()
+        public void SetSalvarStrategy(ISalvar strategy)
         {
-            // cria uma instacia vazia, usa esse metodo e atribui o retorno pra esse obj
-           apagarStrategy.Apagar();
+            salvarStrategy = strategy;
+        }
+
+        public EventoBase Carregar(int idEvento)
+        {
+            return carregarStrategy.Carregar(idEvento);
+        }
+
+        public bool Salvar()
+        {
+            return salvarStrategy.Salvar(this);
         }
     }
 }

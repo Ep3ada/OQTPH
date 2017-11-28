@@ -7,6 +7,6 @@ namespace OQTPH.Models
 {
     public interface ISalvar
     {
-        bool Salvar();
+        bool Salvar(EventoBase evento);
     }
 }
