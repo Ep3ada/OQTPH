@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using OQTPH.Models;
 
 namespace OQTPH
 {
     public class Class10
     {
+        public Evento Carregar(int idEvento)
+        {
+            return null;
+        }
+
+
         //        try
         //            {
         //                using (SqlConnection conn = Sql.OpenConnection())

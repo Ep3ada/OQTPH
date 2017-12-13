@@ -6,7 +6,7 @@ using OQTPH.Utils;
 
 namespace OQTPH.Models
 {
-    public abstract class EventoBase
+    public abstract class Evento
     {
         private int id;
         private string nome;
@@ -20,38 +20,8 @@ namespace OQTPH.Models
         private string nomeCriador;
         private DateTime dataCriacao;
         private Endereco endereco;
+        private Usuario criador;
         private DateTime dataCompra;
-        public ICarregar carregarStrategy;
-        public ISalvar salvarStrategy;
-        public IApagar apagarStartegy;
-
-        //public Evento(
-        //    int id,
-        //    string nome,
-        //    string descricao,
-        //    int nroIngressos,
-        //    int idCriador,
-        //    string nomeCriador,
-        //    DateTime dataCriacao,
-        //    Endereco endereco,
-        ////    DateTime dataCompra)
-        //{
-        //    this.id = id;
-        //    this.nome = nome;
-        //    this.descricao = descricao;
-        //    this.nroIngressos = nroIngressos;
-        //    this.idCriador = idCriador;
-        //    this.nomeCriador = nomeCriador;
-        //    this.dataCriacao = dataCriacao;
-        //    this.endereco = endereco;
-        //    this.dataCompra = dataCompra;
-        //}
-
-        public EventoBase(ISalvar salvar, ICarregar carregar)
-        {
-            salvarStrategy = salvar;
-            carregarStrategy = carregar;
-        }
 
         public int Id
         {
@@ -137,6 +107,18 @@ namespace OQTPH.Models
             }
         }
 
+        public Usuario Criador
+        {
+            get
+            {
+                return criador;
+            }
+            set
+            {
+                criador = value;
+            }
+        }
+
         public Endereco Endereco
         {
             get
@@ -209,24 +191,34 @@ namespace OQTPH.Models
             }
         }
 
-        public void SetCarregarStrategy(ICarregar strategy)
+        public abstract bool Salvar();
+
+        public abstract bool Apagar();
+
+        public static Evento Carregar(string tipo)
         {
-            carregarStrategy = strategy;
+            return null;
         }
 
-        public void SetSalvarStrategy(ISalvar strategy)
-        {
-            salvarStrategy = strategy;
-        }
 
-        public EventoBase Carregar(int idEvento)
-        {
-            return carregarStrategy.Carregar(idEvento);
-        }
+        //public void SetCarregarStrategy(ICarregar strategy)
+        //{
+        //    carregarStrategy = strategy;
+        //}
 
-        public bool Salvar()
-        {
-            return salvarStrategy.Salvar(this);
-        }
+        //public void SetSalvarStrategy(ISalvar strategy)
+        //{
+        //    salvarStrategy = strategy;
+        //}
+
+        //public static Evento Carregar(int idEvento)
+        //{
+        //    return carregarStrategy.Carregar(idEvento);
+        //}
+
+        //public bool Salvar()
+        //{
+        //    return salvarStrategy.Salvar(this);
+        //}
     }
 }

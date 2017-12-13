@@ -96,5 +96,10 @@ namespace OQTPH.Models
         {
             return CarregarEndereco.Carregar(id);
         }
+
+        public bool Apagar()
+        {
+            return false;
+        }
     }
 }

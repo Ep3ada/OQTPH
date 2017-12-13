@@ -6,21 +6,21 @@ using OQTPH.Models;
 
 namespace OQTPH
 {
-    public class EventoCompleto : EventoBase
+    public class EventoCompleto : Evento
     {
-        public EventoCompleto(ISalvar salvar, ICarregar carregar) : base(salvar, carregar)
+        public override bool Salvar()
         {
-
+            return false;
         }
 
-        //public void Salvar()
-        //{
-
-        //}
+        public override bool Apagar()
+        {
+            return false;
+        }
 
         //public static void Carregar(int idEvento)
         //{
-        //    //ServicosEventoCompleto.Carregar(idEvento);
+        //    ServicosEventoCompleto.Carregar(idEvento);
         //}
     }
 }
