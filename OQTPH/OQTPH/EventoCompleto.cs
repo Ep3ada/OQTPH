@@ -8,6 +8,8 @@ namespace OQTPH
 {
     public class EventoCompleto : Evento
     {
+
+        
         public override bool Salvar()
         {
             return false;

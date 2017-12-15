@@ -75,11 +75,11 @@ namespace OQTPH.Models
         //    this.token = token;
         //}
 
-        //public Usuario(string nome, int id)
-        //{
-        //    this.id = id;
-        //    this.nome = nome;
-        //}
+        public Usuario(string nome, int id)
+        {
+            this.id = id;
+            this.nome = nome;
+        }
 
         public static Usuario Criar(string nome, string email, string usern, string senha)
         {

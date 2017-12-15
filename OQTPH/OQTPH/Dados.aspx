@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dados.aspx.cs" Inherits="OQTPH.Dados" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dados.aspx.cs" Inherits="OQTPH.Dados" Culture="auto" meta:resourcekey="PageResource1" UICulture="auto" %>
 
 <!DOCTYPE html>
 
@@ -134,7 +134,6 @@
 
                 <div>
                     <asp:Button runat="server" class="btn btn-primary" role="button" Text="Criar" ID="btn" OnClick="btn_Click" meta:resourcekey="btnResource1" />&emsp;
-                    <asp:Button runat="server" class="btn btn-primary" role="button" Text="Atualizar" ID="btnUp" OnClick="btnUp_Click" Visible="False" meta:resourcekey="btnUpResource1" />&emsp;
                     <asp:Button Text="Voltar" class="btn btn-primary" role="button" runat="server" ID="btnVoltar" OnClick="btnVoltar_Click" formnovalidate="true" meta:resourcekey="btnVoltarResource1" />
                 </div>
                 <div>
@@ -148,8 +147,8 @@
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
                     <address>
                         <strong>O que tem pra hoje?, Inc.rong><br />
-                        Digital School<br />
-                        R. Estela, 268, SP, 04011-001<br />
+                            Digital School<br />
+                            R. Estela, 268, SP, 04011-001<br />
                     </address>
                     <address>
                         <strong>Contato</strong><br />

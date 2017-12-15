@@ -1,11 +1,33 @@
 ﻿using System;
 using System.Net.Mail;
 using System.Text;
+using OQTPH.Utils;
+using System.Data.SqlClient;
 
 namespace OQTPH
 {
     public static class Email
     {
+        public static bool ValidarEmail(string email)
+        {
+            using (SqlConnection conn = Sql.OpenConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand("select email from usuario where email = @e", conn))
+                {
+                    cmd.Parameters.AddWithValue("@e", email);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows & reader.Read())
+                        {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+
         public static void Enviar(string emailDestino, string usernameDestino)
         {
             try
@@ -25,7 +47,7 @@ namespace OQTPH
             }
             catch (Exception)
             {
-                throw new Exception("Não foi possível enviar o e-mail de confirmação de criação de conta!");
+                throw new Exception("Não foi possível enviar o e-mail de boas-vindas!");
             }
         }
     }

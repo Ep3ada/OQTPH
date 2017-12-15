@@ -106,12 +106,5 @@ namespace OQTPH
 //            {
 //                lblMsg.Text = "Erro de conexão inesperado!";
 //            }
-        public Evento SalvarEventoCompleto()
-        {
-
-        }
-
-
-
     }
 }

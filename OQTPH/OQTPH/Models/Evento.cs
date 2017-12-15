@@ -6,22 +6,23 @@ using OQTPH.Utils;
 
 namespace OQTPH.Models
 {
-    public abstract class Evento
+    public class Evento
     {
         private int id;
         private string nome;
         private string descricao;
         private int nroIngressos;
-        private int idCriador;
+        //private int idCriador;
         private DateTime data;
         private string telefone;
         private double valor;
         private int categoria;
-        private string nomeCriador;
+        //private string nomeCriador;
         private DateTime dataCriacao;
         private Endereco endereco;
         private Usuario criador;
         private DateTime dataCompra;
+        private ServicosEvento servicos;
 
         public int Id
         {
@@ -71,29 +72,29 @@ namespace OQTPH.Models
             }
         }
 
-        public int IdCriador
-        {
-            get
-            {
-                return idCriador;
-            }
-            set
-            {
-                idCriador = value;
-            }
-        }
+        // public int IdCriador
+        // {
+        //     get
+        //     {
+        //         return idCriador;
+        //     }
+        //     set
+        //     {
+        //         idCriador = value;
+        //     }
+        // }
 
-        public string NomeCriador
-        {
-            get
-            {
-                return nomeCriador;
-            }
-            set
-            {
-                nomeCriador = value;
-            }
-        }
+        // public string NomeCriador
+        // {
+        //     get
+        //     {
+        //         return nomeCriador;
+        //     }
+        //     set
+        //     {
+        //         nomeCriador = value;
+        //     }
+        // }
 
         public DateTime DataCriacao
         {
@@ -191,34 +192,39 @@ namespace OQTPH.Models
             }
         }
 
-        public abstract bool Salvar();
-
-        public abstract bool Apagar();
-
-        public static Evento Carregar(string tipo)
+        public ServicosEvento Servicos
         {
+            get
+            {
+                return servicos;
+            }
+            set
+            {
+                servicos = value;
+            }
+
+        }
+
+        public void Salvar()
+        {
+            servicos.Salvar();
+        }
+
+        public void Apagar()
+        {
+            servicos.Apagar();
+        }
+
+        public static Evento Carregar(string tipo, int id)
+        {
+            ServicosEvento.CarregarEvento(tipo);
             return null;
         }
 
+        public static List<Evento> CarregarEventos(string tipo, string catg, int id)
+        {
+            return ServicosEvento.CarregarEventos(tipo, catg, id);
+        }
 
-        //public void SetCarregarStrategy(ICarregar strategy)
-        //{
-        //    carregarStrategy = strategy;
-        //}
-
-        //public void SetSalvarStrategy(ISalvar strategy)
-        //{
-        //    salvarStrategy = strategy;
-        //}
-
-        //public static Evento Carregar(int idEvento)
-        //{
-        //    return carregarStrategy.Carregar(idEvento);
-        //}
-
-        //public bool Salvar()
-        //{
-        //    return salvarStrategy.Salvar(this);
-        //}
     }
 }

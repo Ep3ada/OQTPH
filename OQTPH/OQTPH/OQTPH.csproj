@@ -84,27 +84,31 @@
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="Perfil.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarregarEventoSimples.cs" />
     <Compile Include="CookieHandler.cs" />
+    <Compile Include="EventoBase.cs" />
     <Compile Include="EventoCompleto.cs" />
     <Compile Include="CarregarEventoCompleto.cs" />
     <Compile Include="Class10.cs" />
     <Compile Include="Class11.cs" />
     <Compile Include="Class12.cs" />
     <Compile Include="Class13.cs" />
-    <Compile Include="Class14.cs" />
     <Compile Include="Class15.cs" />
     <Compile Include="Class16.cs" />
+    <Compile Include="EventoSimples.cs" />
+    <Compile Include="ServicosEvento.cs" />
+    <Compile Include="ServicosEventoCompleto.cs" />
+    <Compile Include="ServicosPerfilComprados.cs" />
+    <Compile Include="ServicosPerfilFiltro.cs" />
     <Compile Include="ServicosUsuario.cs" />
     <Compile Include="Class2.cs" />
-    <Compile Include="Class4.cs" />
-    <Compile Include="Class5.cs" />
-    <Compile Include="Class6.cs" />
     <Compile Include="Class7.cs" />
-    <Compile Include="Class8.cs" />
-    <Compile Include="Class9.cs" />
+    <Compile Include="ServicosDefault.cs" />
     <Compile Include="CriarEvento.aspx.cs">
       <DependentUpon>CriarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
